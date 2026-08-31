@@ -19,21 +19,21 @@ class Settings(BaseSettings):
     DB_PASSWORD: str = Field("", description="数据库密码")
     DB_NAME: str = Field("media_crawler", description="数据库名称")
 
-    INSIGHT_ENGINE_API_KEY: Optional[str] = Field(None, description="Insight 角色 API 密钥")
-    INSIGHT_ENGINE_BASE_URL: Optional[str] = Field(
-        "https://api.moonshot.cn/v1", description="Insight 角色 BaseUrl"
+    INSIGHT_AGENT_API_KEY: Optional[str] = Field(None, description="Insight 角色 API 密钥")
+    INSIGHT_AGENT_BASE_URL: Optional[str] = Field(
+        "https://api.openai-proxy.org/v1", description="Insight 角色 BaseUrl"
     )
-    INSIGHT_ENGINE_MODEL_NAME: str = Field("kimi-k2-0711-preview", description="Insight 角色模型名")
-    INSIGHT_ENGINE_MODEL_PROVIDER: str = Field(
+    INSIGHT_AGENT_MODEL_NAME: str = Field("qwen3.8-max", description="Insight 角色模型名")
+    INSIGHT_AGENT_MODEL_PROVIDER: str = Field(
         "openai", description="Insight 角色厂商(langchain provider)"
     )
 
-    MEDIA_ENGINE_API_KEY: Optional[str] = Field(None, description="Media 角色 API 密钥")
-    MEDIA_ENGINE_BASE_URL: Optional[str] = Field(
+    MEDIA_AGENT_API_KEY: Optional[str] = Field(None, description="Media 角色 API 密钥")
+    MEDIA_AGENT_BASE_URL: Optional[str] = Field(
         "https://aihubmix.com/v1", description="Media 角色 BaseUrl"
     )
-    MEDIA_ENGINE_MODEL_NAME: str = Field("gemini-2.5-pro", description="Media 角色模型名")
-    MEDIA_ENGINE_MODEL_PROVIDER: str = Field(
+    MEDIA_AGENT_MODEL_NAME: str = Field("DeepSeek-V4-Pro", description="Media 角色模型名")
+    MEDIA_AGENT_MODEL_PROVIDER: str = Field(
         "openai", description="Media 角色厂商(langchain provider)"
     )
 
@@ -46,10 +46,10 @@ class Settings(BaseSettings):
         "openai", description="报告引擎厂商(langchain provider)"
     )
 
-    HOST_API_KEY: Optional[str] = Field(None, description="HostAgent API 密钥")
-    HOST_BASE_URL: Optional[str] = Field(None, description="HostAgent BaseUrl")
-    HOST_MODEL_NAME: Optional[str] = Field(None, description="HostAgent 模型名")
-    HOST_MODEL_PROVIDER: str = Field("openai", description="HostAgent 厂商(langchain provider)")
+    HOST_AGENT_API_KEY: Optional[str] = Field(None, description="HostAgent API 密钥")
+    HOST_AGENT_BASE_URL: Optional[str] = Field(None, description="HostAgent BaseUrl")
+    HOST_AGENT_MODEL_NAME: Optional[str] = Field(None, description="HostAgent 模型名")
+    HOST_AGENT_MODEL_PROVIDER: str = Field("openai", description="HostAgent 厂商(langchain provider)")
 
     ANSPIRE_API_KEY: Optional[str] = Field(None, description="Anspire API 密钥")
     ANSPIRE_BASE_URL: Optional[str] = Field(
