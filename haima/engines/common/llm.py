@@ -73,9 +73,9 @@ class LLMClient:
         final_chunks = []
         try:
             async for chunk in chat_model.astream(message_context):
-                if text:=chunk.text:
+                if text:=chunk.content:
                     final_chunks.append(text)
-                    # logger.info(text)
+                    # logger.info(f"切片内容: {chunk}")
         except Exception as e:
             raise ValueError(f"{self.model_name}调用失败，原因{str(e)}")
 
@@ -153,7 +153,7 @@ class LLMClient:
 
 
 if __name__ == '__main__':
-    llm = LLMClient.from_role("insight")
+    llm = LLMClient.from_role("insight_agent")
     res = asyncio.run(llm.generate_text("你是一个助手", "你叫什么名字"))
     print(res)
 

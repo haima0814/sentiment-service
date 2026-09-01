@@ -36,5 +36,5 @@ def router_by_role_log(role: str):
 
 
 if __name__ == '__main__':
-    with router_by_role_log('insight'):
+    with router_by_role_log('insight_agent'):
         logger.info("haha")

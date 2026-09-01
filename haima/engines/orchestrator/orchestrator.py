@@ -9,7 +9,7 @@ from haima.engines.common.report import get_report_dir
 from haima.engines.common.task_manager import task_manager
 from haima.engines.contract.agent_role import AgentInfoRoleKey
 from haima.engines.insight.agent import insight_agent_invoker
-from haima.engines.media.agent import media_agent_invoker
+from haima.engines.media_agent.agent import media_agent_invoker
 
 AGENT_INVOKER = Callable[[AgentInfoRoleKey, str, str, LLMClient, str], Awaitable[None]]
 
@@ -18,8 +18,8 @@ class OrchestratorResearchAgent:
 
     def __init__(self):
         self.agent_invoker: dict[AgentInfoRoleKey, AGENT_INVOKER] = {
-            "insight": insight_agent_invoker,
-            "media": media_agent_invoker
+            "insight_agent": insight_agent_invoker,
+            "media_agent": media_agent_invoker
         }
 
     def dispatch_task(self,
