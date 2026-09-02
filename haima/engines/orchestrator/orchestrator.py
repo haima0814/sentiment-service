@@ -8,7 +8,7 @@ from haima.engines.common.logger import router_by_role_log
 from haima.engines.common.report import get_report_dir
 from haima.engines.common.task_manager import task_manager
 from haima.engines.contract.agent_role import AgentInfoRoleKey
-from haima.engines.insight.agent import insight_agent_invoker
+from haima.engines.insight_agent.agent import insight_agent_invoker
 from haima.engines.media_agent.agent import media_agent_invoker
 
 AGENT_INVOKER = Callable[[AgentInfoRoleKey, str, str, LLMClient, str], Awaitable[None]]

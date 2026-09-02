@@ -2,7 +2,6 @@ from dataclasses import fields
 from datetime import datetime
 from typing import Any
 
-from networkx.algorithms.link_analysis import hits_alg
 from pymilvus import MilvusClient, AnnSearchRequest, RRFRanker
 from loguru import logger
 

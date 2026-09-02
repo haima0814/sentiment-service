@@ -1,5 +1,7 @@
 from haima.engines.common.llm import LLMClient
+from haima.engines.common.research_graph_runtime import ResearchRunContext, invoke_research_graph
 from haima.engines.contract.agent_role import AgentInfoRoleKey
+from haima.engines.insight_agent.graph import build_insight_graph
 
 
 async def insight_agent_invoker(role:AgentInfoRoleKey,
@@ -16,4 +18,12 @@ async def insight_agent_invoker(role:AgentInfoRoleKey,
     :param output_dir:
     :return:
     """
-    pass
+    # 驱动执行insight 采用LangGraph框架·
+
+    context = ResearchRunContext(
+        task_id=task_id,
+        role=role,
+        llm_client=llm_client,
+        output_dir=output_dir
+    )
+    await invoke_research_graph(build_insight_graph(context),query)
