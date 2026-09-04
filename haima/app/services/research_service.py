@@ -1,4 +1,4 @@
-from haima.engines.common.task_manager import task_manager
+from haima.engines.common.task_manager import task_manager, ResearchTaskInfo
 from haima.engines.orchestrator.orchestrator import OrchestratorResearchAgent
 
 
@@ -13,7 +13,7 @@ class ResearchService:
         :return:
         """
         # 1.创建研究任务
-        research_task = task_manager.create_research_task(query)
+        research_task:ResearchTaskInfo = task_manager.create_research_task(query)
 
         # 2.利用协调manager将任务转发出去
         self.orchestrator.dispatch_task(research_task.task_id,query)
