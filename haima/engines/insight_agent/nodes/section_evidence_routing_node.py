@@ -41,7 +41,7 @@ def _is_semantic_enabled(records: list[EvidenceRecord]) -> bool:
 
 
 def _route_by_semantics(records: list[EvidenceRecord]) -> dict[str, list[str]]:
-    """逐条计算与固定章节向量的相似度，并路由到最相似章节"""
+    """逐条计算与固定章节向量的相似度，并路由到最相似章节 todo 这里匹配规则值得研究"""
     contents = [
         (
             f"{' '.join(record.retrieval.matched_queries)}"
